@@ -6,8 +6,8 @@ services:
     container_name: prometheus
     command: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=5d
     volumes:
-      - prom_config:/etc/prometheus/
-      - prom_data:/prometheus
+      - ./prometheus/:/etc/prometheus/
+      - ./prom_data:/prometheus
     ports:
       - 9090:9090
     networks:
@@ -19,19 +19,20 @@ services:
     networks:
       - prom-node
 
-volumes:
-  prom_config:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${PWD}/prometheus/
-  prom_data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${PWD}/prom_data/
+# Way to name the volume but useless
+# volumes:
+#   prom_config:
+#     driver: local
+#     driver_opts:
+#       type: none
+#       o: bind
+#       device: ${PWD}/prometheus/
+#   prom_data:
+#     driver: local
+#     driver_opts:
+#       type: none
+#       o: bind
+#       device: ${PWD}/prom_data/
 
 networks:
   prom-node:
