@@ -1,0 +1,18 @@
+{
+	"ulid": "01M61ANSDKGRHXBYC0AW43K7JR",
+	"minTime": 1793124008855,
+	"maxTime": 1793131200000,
+	"stats": {
+		"numSamples": 235394,
+		"numFloatSamples": 235394,
+		"numSeries": 2181,
+		"numChunks": 2181
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01M61ANSDKGRHXBYC0AW43K7JR"
+		]
+	},
+	"version": 1
+}
